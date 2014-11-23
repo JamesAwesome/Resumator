@@ -2,9 +2,11 @@ language: 'python'
 python:
   - '3.4'
 install: 'pip install -r requirements.txt'
-script: './manage.py test'
+script: 'coverage run --source=resumator --branch -m unittest -v'
 deploy:
   provider: 'heroku'
   api_key:
     secure: b84/8vg/CMz82EpQYMAccv0pLFsg+cKg0emY2RSop2zzeNYtM/xfnA6pKWmLLfdz2xFE9/SCZeamY0poCbbzD6vnXSEPRxyyPA02cYCOtIOPyZp1LNYWgQchOobJZYeTL2zDgO55kSYyQ5AmA9mUNchVzrGQ+K+Ilk61sbqyOXM=
   app: 'stark-stream-2931'
+after_success:
+  - coveralls
