@@ -11,6 +11,4 @@ This app takes a resume in json format from a file or a URL and returns the json
   - Support formats other than json
   - Format request statistics
 
-Author: James Awesome <james@wesome.nyc>
-
-License: Apache 2.0
+Author:: James Awesome <james@wesome.nyc>
