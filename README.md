@@ -1,4 +1,5 @@
+[![Build Status](https://travis-ci.org/JamesAwesome/Resumator.svg?branch=master)](https://travis-ci.org/JamesAwesome/Resumator)
+
 # Resumator
 
-Small flask app meant to return a person's resume in a variety of file formats
-generated from a json document.
+
