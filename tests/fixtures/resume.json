@@ -1,0 +1,102 @@
+{
+    "name": "Example Human",
+    "title": "Example Engineer",
+    "github": "https://github.com/example",
+    "linkedin": "https://www.linkedin.com/example",
+    "contact": {
+        "cell": "555-555-5555",
+        "email": "example@example.com"
+    },
+    "experience": {
+        "amqp": [
+            "RabbitMQ"
+        ],
+        "automation": {
+            "configurationManagement": [
+                "Chef",
+                "Puppet",
+                "ChefSpec",
+                "PuppetSpec",
+                "ServerSpec",
+                "Test Kitchen"
+            ],
+            "continuousIntegration": [
+                "Jenkins",
+                "Fabric",
+                "Github",
+                "Gitolite"
+            ]
+        },
+        "cloud": {
+            "aws": [
+                "EC2",
+                "Route 53",
+                "CloudFront",
+                "RDS",
+                "ElastiCache"
+            ],
+            "openStack": [
+                "Nova",
+                "Neutron",
+                "Keystone",
+                "Swift",
+                "Cinder"
+            ]
+        },
+        "database": [
+            "ElasticSearch",
+            "MySQL",
+            "MariaDB",
+            "MongoDB",
+            "MemCache",
+            "Redis",
+            "LDAP"
+        ],
+        "distros": [
+            "Debian",
+            "CentOS",
+            "Ubuntu",
+            "Gentoo"
+        ],
+        "loadBalancing": [
+            "HAproxy",
+            "Cisco CSM",
+            "Pacemaker",
+            "Corosync"
+        ],
+        "monitoring": [
+            "Sensu",
+            "Nagios",
+            "NewRelic",
+            "Graphite",
+            "LogStash"
+        ],
+        "routingAndSwitching": [
+            "Cisco",
+            "SonicWall",
+            "OpenFlow",
+            "OpenVSwitch",
+            "BGP",
+            "SpanningTree",
+            "OSPF"
+        ]
+    },
+    "workHistory": {
+        "example_inc": {
+            "title": "Example Engineer",
+            "timeFrame": "Alpha - Omega",
+            "responsibilities": [
+              "Be an awesome dude",
+              "Be more awesome then that"
+            ]
+        },
+        "other_example_inc": {
+            "title": "example dude",
+            "timeFrame": "December 2009 - March 2014",
+            "responsibilities": [
+                "Helpdesk",
+                "Making examples"
+            ]
+        }
+    }
+}
