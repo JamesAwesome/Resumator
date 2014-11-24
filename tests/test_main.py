@@ -4,6 +4,7 @@ from unittest.mock import patch
 import json
 
 from resumator import create_app
+from resumator.main.errors import ResumeNotFound
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -49,3 +50,8 @@ class BasicsTestCase(unittest.TestCase):
 
     def test_https_resume(self):
         self.validate_web_resume('https://example.com/resume')
+
+    def test_resume_not_found_exception(self):
+        exception = ResumeNotFound()
+        assert exception.status_code == 404
+        assert str(exception) == 'Resume Not Found!'
