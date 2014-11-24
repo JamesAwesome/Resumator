@@ -55,3 +55,7 @@ class BasicsTestCase(unittest.TestCase):
         exception = ResumeNotFound()
         assert exception.status_code == 404
         assert str(exception) == 'Resume Not Found!'
+
+    def test_resume_not_found_custom_detail(self):
+        exception = ResumeNotFound('Custom Detail!')
+        assert str(exception) == 'Custom Detail!'
