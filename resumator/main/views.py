@@ -11,16 +11,17 @@ from flask import json, jsonify, current_app
 
 @main.route('/')
 def index():
-    with get_resume(current_app.config['RESUME_JSON']) as resume:
-        resume_json = json.load(resume)
-        return jsonify(resume_json)
+    resume_json = get_resume(current_app.config['RESUME_JSON'])
+    return jsonify(resume_json)
 
 def get_resume(location):
     if os.path.isfile(location):
-        return open(location, 'r')
+        with open(location, 'r') as resume:
+            return json.loads(resume.read())
 
     elif urlparse(location).scheme in ['http', 'https']:
-        return urlopen(location)
+        with urlopen(location) as resume:
+            return json.loads(resume.read())
 
     else:
         raise ResumeNotFound
