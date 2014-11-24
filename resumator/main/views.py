@@ -6,13 +6,16 @@ from .errors import ResumeNotFound
 from urllib.parse import urlparse
 from urllib.request import urlopen
 
-from flask import json, jsonify, current_app 
+from flask import json, jsonify, current_app, render_template
 
 
-@main.route('/')
-def index():
+@main.route('/<format>')
+def index(format=None):
     resume_json = get_resume(current_app.config['RESUME_JSON'])
-    return jsonify(resume_json)
+    if format == None:
+        return jsonify(resume_json)
+    elif format == 'markdown':
+        return render_template('resume.md')
 
 def get_resume(location):
     if os.path.isfile(location):
