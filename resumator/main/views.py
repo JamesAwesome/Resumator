@@ -13,7 +13,7 @@ from flask import json, jsonify, current_app, render_template
 def index(format=None):
     resume_json = get_resume(current_app.config['RESUME_JSON'])
     if format == None:
-        return render_template('resume.md', resume=resume_json)
+        return render_template('resume.html', resume=resume_json)
     elif format == 'raw':
         return jsonify(resume_json)
     else:

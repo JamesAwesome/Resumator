@@ -1,102 +1,143 @@
 {
-    "name": "Example Human",
-    "title": "Example Engineer",
-    "github": "https://github.com/example",
-    "linkedin": "https://www.linkedin.com/example",
-    "contact": {
-        "cell": "555-555-5555",
-        "email": "example@example.com"
-    },
-    "experience": {
-        "amqp": [
-            "RabbitMQ"
-        ],
-        "automation": {
-            "configurationManagement": [
-                "Chef",
-                "Puppet",
-                "ChefSpec",
-                "PuppetSpec",
-                "ServerSpec",
-                "Test Kitchen"
-            ],
-            "continuousIntegration": [
-                "Jenkins",
-                "Fabric",
-                "Github",
-                "Gitolite"
-            ]
-        },
-        "cloud": {
-            "aws": [
-                "EC2",
-                "Route 53",
-                "CloudFront",
-                "RDS",
-                "ElastiCache"
-            ],
-            "openStack": [
-                "Nova",
-                "Neutron",
-                "Keystone",
-                "Swift",
-                "Cinder"
-            ]
-        },
-        "database": [
-            "ElasticSearch",
-            "MySQL",
-            "MariaDB",
-            "MongoDB",
-            "MemCache",
-            "Redis",
-            "LDAP"
-        ],
-        "distros": [
-            "Debian",
-            "CentOS",
-            "Ubuntu",
-            "Gentoo"
-        ],
-        "loadBalancing": [
-            "HAproxy",
-            "Cisco CSM",
-            "Pacemaker",
-            "Corosync"
-        ],
-        "monitoring": [
-            "Sensu",
-            "Nagios",
-            "NewRelic",
-            "Graphite",
-            "LogStash"
-        ],
-        "routingAndSwitching": [
-            "Cisco",
-            "SonicWall",
-            "OpenFlow",
-            "OpenVSwitch",
-            "BGP",
-            "SpanningTree",
-            "OSPF"
+  "bio": {
+    "fullName": "Hugh Mann",
+    "jobTitle": "Ensign"
+  },
+  "contactInfo": {
+    "cell": "555-555-5555",
+    "email": "hugh.mann@example.com",
+    "github": "https://github.com/jamesawesome",
+    "linkedin": "https://www.linkedin.com/pub/hugh-mann"
+  },
+  "technology": {
+    "amqp": [
+      "RabbitMQ",
+      "Amazon SQS"
+    ],
+    "aws": [
+      "ec2",
+      "boto",
+      "Route 53",
+      "CloudFormation",
+      "RDS",
+      "ElastiCache",
+      "SQS",
+      "S3"
+    ],
+    "configuration management": [
+      "Chef",
+      "Puppet",
+      "ChefSpec",
+      "PuppetSpec",
+      "ServerSpec",
+      "Test Kitchen"
+    ],
+    "continuous integration": [
+      "Jenkins",
+      "Fabric",
+      "Github",
+      "TravisCI"
+    ],
+    "databases": [
+      "ElasticSearch",
+      "MySQL",
+      "MariaDB",
+      "MongoDB",
+      "MemCache",
+      "Redis",
+      "LDAP"
+    ],
+    "languages": [
+      "Ruby",
+      "Python",
+      "Bash",
+      "Chef",
+      "Puppet"
+    ],
+    "linux": [
+      "Debian",
+      "CentOS",
+      "Ubuntu",
+      "Arch",
+      "Gentoo"
+    ],
+    "loadBalancers": [
+      "HAproxy",
+      "Cisco CSM",
+      "Pacemaker",
+      "Corosync"
+    ],
+    "monitoring": [
+      "Sensu",
+      "Nagios",
+      "NewRelic",
+      "Graphite",
+      "PagerDuty",
+      "LogStash"
+    ],
+    "openstack": [
+      "Nova",
+      "Neutron",
+      "Keystone",
+      "Swift",
+      "Cinder"
+    ],
+    "routing": [
+      "Cisco",
+      "SonicWall",
+      "OpenFlow",
+      "OpenVSwitch",
+      "BGP",
+      "SpanningTree",
+      "OSPF"
+    ]
+  },
+  "workHistory": [
+    {
+      "CrowdSurge": {
+        "begin": "July 2014",
+        "end": "",
+        "jobTitle": "DevOps Engineer",
+        "responsibilities": [
+          "Coordinate efforts with remote DevOps Team in England",
+          "Manage, support and develop chef cookbooks",
+          "Support and develop Multi-Server Jenkins Deployment",
+          "Help manage and develop continuous integration system",
+          "Help support go microservice distrubuted application on AWS",
+          "Integrate monitoring and reporting systems with pagerduty and hipchat",
+          "Manage NY office networking equipment and wireless access points",
+          "Manage vendor relations and purchasing for NY office infrastructure"
         ]
+      }
     },
-    "workHistory": {
-        "example_inc": {
-            "title": "Example Engineer",
-            "timeFrame": "Alpha - Omega",
-            "responsibilities": [
-              "Be an awesome dude",
-              "Be more awesome then that"
-            ]
-        },
-        "other_example_inc": {
-            "title": "example dude",
-            "timeFrame": "December 2009 - March 2014",
-            "responsibilities": [
-                "Helpdesk",
-                "Making examples"
-            ]
-        }
+    {
+      "MiMedia": {
+        "begin": "April 2011",
+        "end": "July 2014",
+        "jobTitle": "DevOps Engineer",
+        "responsibilities": [
+          "Monitor, maintain and support the MiMedia v1 and v2 platforms",
+          "Management and maintenance of remote colocation facilities",
+          "Maintenance and repair of physical storage and compute infrastructure",
+          "Directed and performed migration of Employee directory from Microsoft AD to Google Apps",
+          "Education of employees on new technologies and best practices",
+          "Assistance of vendor relations and purchasing",
+          "Load testing and performance testing of physical hardware",
+          "Deployment of OpenStack on company owned hardware"
+        ]
+      }
+    },
+    {
+      "Baldwin Union Free School District": {
+        "begin": "December 2009",
+        "end": "March 2011",
+        "jobTitle": "IT Specialist",
+        "responsibilities": [
+          "Helpdesk",
+          "Deployment of workstation update system",
+          "Deployment and support of small linux based webapps for teachers use"
+        ]
+      }
     }
+  ]
 }
