@@ -13,19 +13,28 @@ class BasicsTestCase(unittest.TestCase):
         self.app = create_app('testing')
         self.client = self.app.test_client()
 
-    def test_file_resume(self):
+    def test_html_resume(self):
+        response = self.client.get('/')
+        assert response.status_code == 200
+
+    def test_raw_resume(self):
         resume_file = os.path.join(basedir, 'fixtures/resume.json')
         with open(resume_file, 'r') as resume:
             test_json = json.load(resume)
         
-            response = self.client.get('/')
+            response = self.client.get('/raw')
 
             response_json = json.loads(response.data.decode())
             assert response_json == test_json
 
+    def test_invalid_resume_format(self):
+        response = self.client.get('/invalid_format')
+        assert response.status_code == 404
+        assert response.data.decode() == 'Invalid Format!'
+
     def test_resume_not_found(self):
         self.app.config['RESUME_JSON'] = 'non-existent'
-        response = self.client.get('/')
+        response = self.client.get('/raw')
         assert response.status_code == 404
         assert response.data.decode() == 'Resume Not Found!'
 
@@ -39,7 +48,7 @@ class BasicsTestCase(unittest.TestCase):
 
                 urlopen_mock.return_value = mock_resume
                 
-                response = self.client.get('/')
+                response = self.client.get('/raw')
 
                 test_json = json.load(resume)
                 response_json = json.loads(response.data.decode())
