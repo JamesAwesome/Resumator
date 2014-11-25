@@ -1,0 +1,36 @@
+<head>
+  <title>Resumator</title>
+</head>
+<body>
+{% filter markdown %}
+# {{ resume['bio']['fullName'] }} | {{ resume['bio']['jobTitle'] }}
+## Contact Info
+---
+{% set contact = resume['contactInfo'] %}
++ Cell: {{contact['cell']}}
++ Github: <{{contact['github']}}>
++ Linkedin: <{{ contact['linkedin'] }}>
++ Email: <mailto:{{contact['email']}}>
+
+## Technology
+---
+{% set tech = resume['technology'] -%}
+|               |                            |
+| :------------ | :------------------------- |
+{% for cat in tech.keys() -%}
+| **{{ cat }}** | {{ ", ".join(tech[cat]) }} |
+{% endfor %}
+## Work History
+---
+{% for job in resume['workHistory'] -%}
+{% for jobName, info in job.items() -%}
+#### {{ jobName }} | {{ info['jobTitle'] }}
+##### {{info['begin']}} - {{info['end']}} 
+{% for r in info['responsibilities'] -%}
++ {{ r }}
+{% endfor -%}
+{% endfor %}
+{% endfor -%}
+
+{% endfilter %}
+</body>

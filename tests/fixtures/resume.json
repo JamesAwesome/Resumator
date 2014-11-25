@@ -94,48 +94,26 @@
   },
   "workHistory": [
     {
-      "CrowdSurge": {
+      "U.S.S Enterprise": {
         "begin": "July 2014",
         "end": "",
-        "jobTitle": "DevOps Engineer",
+        "jobTitle": "Ensign",
         "responsibilities": [
-          "Coordinate efforts with remote DevOps Team in England",
-          "Manage, support and develop chef cookbooks",
-          "Support and develop Multi-Server Jenkins Deployment",
-          "Help manage and develop continuous integration system",
-          "Help support go microservice distrubuted application on AWS",
-          "Integrate monitoring and reporting systems with pagerduty and hipchat",
-          "Manage NY office networking equipment and wireless access points",
-          "Manage vendor relations and purchasing for NY office infrastructure"
+          "Boldly going where no Mann has gone before",
+          "Coordinate beaming people up and down",
+          "Setting phasers to stun!"
         ]
       }
     },
     {
-      "MiMedia": {
+      "U.S.S Nimbus": {
         "begin": "April 2011",
         "end": "July 2014",
-        "jobTitle": "DevOps Engineer",
+        "jobTitle": "Ensign",
         "responsibilities": [
-          "Monitor, maintain and support the MiMedia v1 and v2 platforms",
-          "Management and maintenance of remote colocation facilities",
-          "Maintenance and repair of physical storage and compute infrastructure",
-          "Directed and performed migration of Employee directory from Microsoft AD to Google Apps",
-          "Education of employees on new technologies and best practices",
-          "Assistance of vendor relations and purchasing",
-          "Load testing and performance testing of physical hardware",
-          "Deployment of OpenStack on company owned hardware"
-        ]
-      }
-    },
-    {
-      "Baldwin Union Free School District": {
-        "begin": "December 2009",
-        "end": "March 2011",
-        "jobTitle": "IT Specialist",
-        "responsibilities": [
-          "Helpdesk",
-          "Deployment of workstation update system",
-          "Deployment and support of small linux based webapps for teachers use"
+          "Retrieval of secret codes for remote operations teams",
+          "Deception of enemy combatents",
+          "Kill all humans"
         ]
       }
     }

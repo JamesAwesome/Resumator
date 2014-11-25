@@ -12,4 +12,4 @@ python-coveralls==2.4.3
 requests==2.4.3
 sh==1.09
 six==1.8.0
-Flask-Markdown==0.3
+Flask-Misaka==0.3.0
