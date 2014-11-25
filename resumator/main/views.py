@@ -6,16 +6,17 @@ from .errors import ResumeNotFound
 from urllib.parse import urlparse
 from urllib.request import urlopen
 
-from flask import json, jsonify, current_app, render_template
+from flask import json, jsonify, current_app, render_template, request
 
 @main.route('/')
 @main.route('/<format>')
 def index(format=None):
     resume_json = get_resume(current_app.config['RESUME_JSON'])
-    if format == None:
-        return render_template('resume.html', resume=resume_json)
-    elif format == 'raw':
+    user_agent = request.user_agent.string
+    if format == 'raw' or user_agent.startswith('curl/'):
         return jsonify(resume_json)
+    elif format == None:
+        return render_template('resume.html', resume=resume_json)
     else:
         raise ResumeNotFound('Invalid Format!')
 

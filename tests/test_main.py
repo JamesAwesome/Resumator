@@ -16,6 +16,16 @@ class BasicsTestCase(unittest.TestCase):
     def test_html_resume(self):
         response = self.client.get('/')
         assert response.status_code == 200
+        assert response.mimetype == 'text/html'
+
+    def test_raw_when_curl(self):
+        resume_file = os.path.join(basedir, 'fixtures/resume.json')
+        with open(resume_file, 'r') as resume:
+            test_json = json.load(resume)
+
+            response = self.client.get('/', environ_base={'HTTP_USER_AGENT': 'curl/7.30.0'})
+            response_json = json.loads(response.data.decode())
+            assert response_json == test_json
 
     def test_raw_resume(self):
         resume_file = os.path.join(basedir, 'fixtures/resume.json')
