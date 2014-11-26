@@ -52,6 +52,11 @@ class BasicsTestCase(unittest.TestCase):
         assert response.status_code == 200
         assert response.mimetype == 'text/html'
 
+    def test_pdf_resume(self):
+        response = self.client.get('/pdf')
+        assert response.status_code == 200
+        assert response.mimetype == 'application/pdf'
+
     def test_invalid_resume_format(self):
         response = self.client.get('/invalid_format')
         assert response.status_code == 404

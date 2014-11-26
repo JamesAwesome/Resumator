@@ -7,16 +7,22 @@ from urllib.parse import urlparse
 from urllib.request import urlopen
 
 from flask import json, jsonify, current_app, render_template, request
+from flask_weasyprint import HTML, render_pdf
 
 @main.route('/')
 @main.route('/<format>')
 def index(format=None):
     resume_json = get_resume(current_app.config['RESUME_JSON'])
     user_agent = request.user_agent.string
+
     if format == 'raw' or (user_agent.startswith('curl/') and format == None):
         return jsonify(resume_json)
-    elif format in [ None, 'html']:
-        return render_template('resume.html', resume=resume_json)
+  
+    html = render_template('resume.html', resume=resume_json)
+    if format in [None, 'html']:
+        return html
+    elif format == 'pdf':
+        return render_pdf(HTML(string=html))
     else:
         raise ResumeNotFound('Invalid Format!')
 
