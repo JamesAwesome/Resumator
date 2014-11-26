@@ -47,6 +47,11 @@ class BasicsTestCase(unittest.TestCase):
         assert response.status_code == 404
         assert response.data.decode() == 'Invalid Format!'
 
+    def test_curl_can_get_html(self):
+        response = self.client.get('/html', environ_base={'HTTP_USER_AGENT': 'curl/7.30.0'})
+        assert response.status_code == 200
+        assert response.mimetype == 'text/html'
+
     def test_invalid_resume_format(self):
         response = self.client.get('/invalid_format')
         assert response.status_code == 404
