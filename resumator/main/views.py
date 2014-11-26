@@ -38,3 +38,7 @@ def get_resume(location):
 
     else:
         raise ResumeNotFound
+
+@main.route('/about')
+def about():
+    return render_template('about.html', version=current_app.config['VERSION'])
