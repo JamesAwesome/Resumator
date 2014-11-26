@@ -2,7 +2,7 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
-    VERSION = '0.1.1'
+    VERSION = '0.1.2'
     DEBUG = True
     DEFAULT = True
     RESUME_JSON = os.environ.get('RESUME_JSON')
