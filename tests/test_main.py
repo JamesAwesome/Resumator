@@ -98,3 +98,9 @@ class BasicsTestCase(unittest.TestCase):
     def test_resume_not_found_custom_detail(self):
         exception = ResumeNotFound('Custom Detail!')
         assert str(exception) == 'Custom Detail!'
+
+    def test_about_page(self):
+        response = self.client.get('/about')
+
+        assert response.status_code == 200
+        assert response.mimetype == 'text/html'
