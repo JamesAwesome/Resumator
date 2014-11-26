@@ -13,7 +13,12 @@ class BasicsTestCase(unittest.TestCase):
         self.app = create_app('testing')
         self.client = self.app.test_client()
 
-    def test_html_resume(self):
+    def test_html_resume_with_format(self):
+        response = self.client.get('/html')
+        assert response.status_code == 200
+        assert response.mimetype == 'text/html'
+
+    def test_html_resume_without_format(self):
         response = self.client.get('/')
         assert response.status_code == 200
         assert response.mimetype == 'text/html'
@@ -36,6 +41,11 @@ class BasicsTestCase(unittest.TestCase):
 
             response_json = json.loads(response.data.decode())
             assert response_json == test_json
+
+    def test_invalid_even_with_curl(self):
+        response = self.client.get('/invalid_format', environ_base={'HTTP_USER_AGENT': 'curl/7.30.0'})
+        assert response.status_code == 404
+        assert response.data.decode() == 'Invalid Format!'
 
     def test_invalid_resume_format(self):
         response = self.client.get('/invalid_format')

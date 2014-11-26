@@ -13,9 +13,9 @@ from flask import json, jsonify, current_app, render_template, request
 def index(format=None):
     resume_json = get_resume(current_app.config['RESUME_JSON'])
     user_agent = request.user_agent.string
-    if format == 'raw' or user_agent.startswith('curl/'):
+    if format == 'raw' or (user_agent.startswith('curl/') and format == None):
         return jsonify(resume_json)
-    elif format == None:
+    elif format in [ None, 'html']:
         return render_template('resume.html', resume=resume_json)
     else:
         raise ResumeNotFound('Invalid Format!')
