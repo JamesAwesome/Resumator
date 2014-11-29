@@ -2,6 +2,7 @@ import os
 
 from . import main
 from .errors import ResumeNotFound
+from cache import cache
 
 from urllib.parse import urlparse
 from urllib.request import urlopen
@@ -11,6 +12,7 @@ from flask_weasyprint import HTML, render_pdf
 
 @main.route('/')
 @main.route('/<format>')
+@cache.memoize()
 def index(format=None):
     resume_json = get_resume(current_app.config['RESUME_JSON'])
     user_agent = request.user_agent.string

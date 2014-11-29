@@ -2,15 +2,19 @@ import os
 import unittest
 from unittest.mock import patch
 import json
+from time import sleep
 
 from resumator import create_app
 from resumator.main.errors import ResumeNotFound
+
+from flask.ext.cache import Cache
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class BasicsTestCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app('testing')
+        self.cache = Cache(self.app)
         self.client = self.app.test_client()
 
     def test_html_resume_with_format(self):
@@ -104,3 +108,15 @@ class BasicsTestCase(unittest.TestCase):
 
         assert response.status_code == 200
         assert response.mimetype == 'text/html'
+
+    def test_memoize_index_view(self):
+        response = self.client.get('/raw')
+        self.app.config['RESUME_JSON'] = 'invalid'
+        response_2 = self.client.get('/raw')
+
+        assert response.data.decode() == response_2.data.decode()
+
+        sleep(5)
+
+        response_3 = self.client.get('/raw')
+        assert response.data.decode() != response_3.data.decode()
