@@ -27,4 +27,3 @@ requests==2.4.3
 sh==1.09
 six==1.8.0
 tinycss==0.3
-newrelic==2.40.0.34

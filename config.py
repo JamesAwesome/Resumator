@@ -6,7 +6,7 @@ class Config:
     DEBUG = True
     DEFAULT = True
     RESUME_JSON = os.environ.get('RESUME_JSON')
-    CACHE_TYPE = os.environ.get('CACHE_TYPE') or 'simple'
+    CACHE_TYPE = os.environ.get('CACHE_TYPE') or 'null'
     CACHE_DEFAULT_TIMEOUT = os.environ.get('CACHE_DEFAULT_TIMEOUT') or 60
     CACHE_MEMCACHED_SERVERS = os.environ.get('MEMCACHIER_SERVERS', '').replace(',', ';')
     CACHE_MEMCACHED_USERNAME = os.environ.get('MEMCACHIER_USERNAME', '')
